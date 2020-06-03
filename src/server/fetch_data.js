@@ -1,39 +1,36 @@
 import React from 'react';
 import axios from 'axios';
 
-class FetchData extends React.Component{
-    constructor(props){
+class FetchData extends React.Component {
+    constructor(props) {
         super(props);
-        this.state={
-            dataFetched:false,
-            data:[]
+        this.state = {
+            data: []
         }
     } // constructor
 
-    componentDidMount(){
+    componentDidMount() {
         axios.get('http://localhost:4000')
-        .then(response=>{
-            console.log('fetched data:',response);
-            this.setState(
-                {
-                    dataFetched:true,
-                    data:response.data
-                }
-            )
-            console.log('state:'+this.state);
-        })
-        .catch(error=>{
-            console.log(error);
-        });
+            .then(response => {
+                //console.log('fetched data:', response);
+                this.setState(
+                    {
+                        data: response.data
+                    }
+                )
+                //console.log('state:' + this.state);
+            })
+            .catch(error => {
+                console.log(error);
+            });
     } //componentDidMount
 
-    render(){
-        let {data}=this.state;
-        let newdata=data.map((data)=>{
-            console.log('data..',data);
-            return newdata;
-        })
-    return(<div>{data}</div>)
+    render() {
+        let { data } = this.state;
+        console.log('data..',data);
+        
+
+        return (<div>{data}</div>)
     } //render
 
 }

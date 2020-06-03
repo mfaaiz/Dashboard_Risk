@@ -22,7 +22,8 @@ app.get('/', function (req, res) {
   connection.getConnection(function (err, connection) {
 
     // Executing the MySQL query (select all data from the 'users' table).
-    connection.query('SELECT full_log FROM alert WHERE rule_id=23505 ', function (error, results, fields) {
+    connection.query('SELECT full_log FROM alert WHERE rule_id=23501 OR rule_id=23503 OR rule_id=23504 OR rule_id=23505 OR rule_id=23506 OR rule_id=23507 OR rule_id=23508 OR rule_id=23509 OR rule_id=23510', 
+    function (error, results, fields) {
       // If some error occurs, we throw an error.
       if (error) throw error;
 

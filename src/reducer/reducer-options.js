@@ -6,7 +6,7 @@ export default function () {
             name: "Dashboard"
         },
         {
-            id: 2,
+            id: 2,  
             name: "Cost"
         },
         {
